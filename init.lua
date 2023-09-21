@@ -20,6 +20,41 @@ return {
   -- Set colorscheme to use
   colorscheme = "nightfox",
 
+  dap = {
+    adapters = {
+      codelldb = {
+        type = "server",
+        port = "${port}",
+        executable = {
+          command = "~/codelldb/extension/adapter/codelldb",
+          args = { '--port', '${port}' },
+        },
+      },
+      lldb = {
+        type = "executable",
+        command = "/data/data/com.termux/files/usr/bin/lldb-vscode",
+        name = "lldb",
+      },
+    },
+    configurations = {
+      c = {
+        {
+          name = "LLDB: Launch",
+          type = "lldb",
+          request = "launch",
+          program = function()
+            return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+          end,
+          cwd = '${workspaceFolder}',
+          stopOnEntry = false,
+          args = {},
+        },
+      },
+      cpp = c,
+      rust = c,
+    },
+  },
+
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
     virtual_text = true,
@@ -50,9 +85,10 @@ return {
     },
     -- enable servers that you already have installed without mason
     servers = {
-      -- "pyright"
+      "clangd",
     },
   },
+  
 
   -- Configure require("lazy").setup() options
   lazy = {
