@@ -31,7 +31,7 @@ return {
     formatting = {
       -- control auto formatting on save
       format_on_save = {
-        enabled = true, -- enable or disable format on save globally
+        enabled = false, -- enable or disable format on save globally
         allow_filetypes = { -- enable format on save for specified filetypes only
           -- "go",
         },
@@ -72,6 +72,25 @@ return {
     vim.opt.expandtab = true
     vim.opt.shiftwidth = 4
     vim.opt.tabstop = 4
+
+    -- local function escape(str)
+    --   -- You need to escape these characters to work correctly
+    --   local escape_chars = [[;,."|\]]
+    --   return vim.fn.escape(str, escape_chars)
+    -- end
+    --
+    -- -- Recommended to use lua template string
+    -- local en = [[`qwertyuiop[]asdfghjkl;'zxcvbnm]]
+    -- local ru = [[ёйцукенгшщзхъфывапролджэячсмить]]
+    -- local en_shift = [[~QWERTYUIOP{}ASDFGHJKL:"ZXCVBNM<>]]
+    -- local ru_shift = [[ËЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ]]
+    --
+    -- vim.opt.langmap = vim.fn.join({
+    --   -- | `to` should be first     | `from` should be second
+    --   escape(ru_shift) .. ';' .. escape(en_shift),
+    --   escape(ru) .. ';' .. escape(en),
+    -- }, ',')
+
     -- Set up custom filetypes
     -- vim.filetype.add {
     --   extension = {
