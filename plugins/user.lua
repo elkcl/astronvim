@@ -19,6 +19,15 @@ return {
   -- end,
     {
         "pocco81/auto-save.nvim",
-        lazy = false
-    }
+        lazy = false,
+    },
+    {
+        "Aasim-A/scrollEOF.nvim",
+        lazy = false,
+        config = function()
+            require('scrollEOF').setup({
+                insert_mode = true,
+            })
+        end,
+    },
 }

@@ -72,6 +72,7 @@ return {
     vim.opt.expandtab = true
     vim.opt.shiftwidth = 4
     vim.opt.tabstop = 4
+    vim.opt.scrolloff = 10
 
     -- local function escape(str)
     --   -- You need to escape these characters to work correctly
