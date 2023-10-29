@@ -5,6 +5,7 @@ return {
   -- available plugins can be found at https://github.com/AstroNvim/astrocommunity
   { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.rust" },
+  { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.colorscheme.nightfox-nvim" },
   -- { import = "astrocommunity.colorscheme.catppuccin" },
   -- { import = "astrocommunity.completion.copilot-lua-cmp" },
