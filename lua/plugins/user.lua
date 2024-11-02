@@ -18,6 +18,7 @@ return {
   {
     "pocco81/auto-save.nvim",
     lazy = false,
+    enabled = vim.env.KITTY_SCROLLBACK_NVIM ~= 'true',
   },
   {
     "Aasim-A/scrollEOF.nvim",
@@ -56,6 +57,19 @@ return {
       return opts
     end,
   },
+  {
+    'mikesmithgh/kitty-scrollback.nvim',
+    enabled = true,
+    lazy = true,
+    cmd = { 'KittyScrollbackGenerateKittens', 'KittyScrollbackCheckHealth' },
+    event = { 'User KittyScrollbackLaunch' },
+    -- version = '*', -- latest stable version, may have breaking changes if major version changed
+    -- version = '^5.0.0', -- pin major version, include fixes and features that do not have breaking changes
+    config = function()
+      require('kitty-scrollback').setup()
+    end,
+  }
+
 
   -- You can disable default plugins as follows:
   -- { "max397574/better-escape.nvim", enabled = false },

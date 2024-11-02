@@ -39,12 +39,28 @@ return {
     },
     -- enable servers that you already have installed without mason
     servers = {
+      "idris2_lsp",
       -- "pyright"
     },
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
     config = {
       clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      basedpyright = {
+        settings = {
+          python = {
+            analysis = {
+              stubPath = ""
+            }
+          }
+        }
+      },
+      tinymist = {
+        root_dir = function(filename, bufnr)
+	                   return vim.fn.getcwd()
+                   end,
+        offset_encoding = "utf-8",
+      },
     },
     -- customize how language servers are attached
     handlers = {

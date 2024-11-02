@@ -11,6 +11,9 @@ return {
   { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.nix" },
+  { import = "astrocommunity.pack.python" },
+  { import = "astrocommunity.pack.typst" },
+  -- { import = "astrocommunity.pack.haskell" },
   { import = "astrocommunity.colorscheme.nightfox-nvim" },
   -- import/override with your plugins folder
 }
