@@ -36,6 +36,8 @@ return {
         shiftwidth = 4,
         tabstop = 4,
         scrolloff = 10,
+        whichwrap = '<,>,[,]',
+        guifont = 'FantasqueSansM\\ Nerd\\ Font',
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
